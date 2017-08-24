@@ -59,14 +59,14 @@ public class MovieController  {
 		return service.create(title);	
 	}
 	
-	@RequestMapping(method=RequestMethod.PUT, path= "{title}", produces=MediaType.APPLICATION_JSON_UTF8_VALUE, consumes=MediaType.APPLICATION_JSON_UTF8_VALUE )
-	public Movie update(@PathVariable("title") Movie title) {
-		return service.update(title);
+	@RequestMapping(method=RequestMethod.PUT, path= "{id}", produces=MediaType.APPLICATION_JSON_UTF8_VALUE, consumes=MediaType.APPLICATION_JSON_UTF8_VALUE )
+	public Movie update(@PathVariable("id") String id, Movie title) {
+		return service.update(id,title);
 	}
 	
-	@RequestMapping(method=RequestMethod.DELETE, path= "{title}" )
-	public void delete(@PathVariable("title") String title) {
-		 service.delete(title);
+	@RequestMapping(method=RequestMethod.DELETE, path= "{id}" )
+	public void delete(@PathVariable("id") String id) {
+		 service.delete(id);
 	}
 		
 	

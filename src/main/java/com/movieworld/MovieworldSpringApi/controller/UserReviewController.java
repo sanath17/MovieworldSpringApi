@@ -28,8 +28,8 @@ public class UserReviewController {
 	}
 	
 	@RequestMapping(method=RequestMethod.GET, path= "{id}", produces=MediaType.APPLICATION_JSON_UTF8_VALUE )
-	public UserReview findOne(@PathVariable("User_Review")  UserReview id, UserReview comments) {
-		return service.findOne(id,comments);
+	public UserReview findOne(@PathVariable("id")  String id) {
+		return service.findOne(id);
 	}
 	
 
@@ -40,13 +40,13 @@ public class UserReviewController {
 	}
 	
 	@RequestMapping(method=RequestMethod.PUT, path= "{Id}", produces=MediaType.APPLICATION_JSON_UTF8_VALUE, consumes=MediaType.APPLICATION_JSON_UTF8_VALUE )
-	public UserReview update(@PathVariable("User_Review") UserReview id, @RequestBody UserReview comments) {
+	public UserReview update(@PathVariable("User_Review") String id, @RequestBody UserReview comments) {
 		return service.update(id, comments);
 	}
 	
-	@RequestMapping(method=RequestMethod.DELETE, path= "{comments}" )
-	public void delete(@PathVariable("User_Review") UserReview comments) {
-		 service.delete(comments);
+	@RequestMapping(method=RequestMethod.DELETE, path= "{id}" )
+	public void delete(@PathVariable("id") String id) {
+		 service.delete(id);
 	}
 	
 }

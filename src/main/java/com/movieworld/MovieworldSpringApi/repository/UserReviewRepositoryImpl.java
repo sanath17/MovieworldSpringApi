@@ -11,8 +11,8 @@ import org.springframework.stereotype.Repository;
 import com.movieworld.MovieworldSpringApi.entity.UserReview;
 
 @Repository
-public class UserReviewRepositoryImpl implements UserReviewRepository  {
-	
+public class UserReviewRepositoryImpl implements UserReviewRepository {
+
 	@PersistenceContext
 	private EntityManager em;
 
@@ -23,7 +23,7 @@ public class UserReviewRepositoryImpl implements UserReviewRepository  {
 	}
 
 	@Override
-	public UserReview findOne(UserReview id) {
+	public UserReview findOne(String id) {
 		return em.find(UserReview.class, id);
 	}
 
@@ -42,7 +42,5 @@ public class UserReviewRepositoryImpl implements UserReviewRepository  {
 	public void delete(UserReview comments) {
 		em.remove(comments);
 	}
-
-	
 
 }

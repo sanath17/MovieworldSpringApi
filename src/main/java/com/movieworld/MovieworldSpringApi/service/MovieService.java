@@ -20,9 +20,9 @@ public interface MovieService {
 	
 	public Movie create(Movie title);
 	
-	public Movie update(Movie title); 
+	public Movie update(String id,Movie title); 
 	
-	public void delete(String title);
+	public void delete(String id);
 
 	
 }

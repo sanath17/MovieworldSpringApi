@@ -8,7 +8,7 @@ public interface UserReviewRepository {
 
 	public List<UserReview> findAll();
 
-	public UserReview findOne(UserReview id);
+	public UserReview findOne(String id);
 
 	public UserReview create(UserReview comments);
 

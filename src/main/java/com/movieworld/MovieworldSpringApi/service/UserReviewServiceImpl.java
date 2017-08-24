@@ -24,7 +24,7 @@ public class UserReviewServiceImpl implements UserReviewService {
 	}
 
 	@Override
-	public UserReview findOne(UserReview id, UserReview comments) {
+	public UserReview findOne(String id) {
 		UserReview existing = repository.findOne(id);
 		if (existing == null) {
 			throw new ReviewNotFoundException("Review with id:" + id + " not found");
@@ -40,7 +40,7 @@ public class UserReviewServiceImpl implements UserReviewService {
 
 	@Override
 	@Transactional
-	public UserReview update(UserReview id, UserReview comments) {
+	public UserReview update(String id, UserReview comments) {
 		UserReview existing = repository.findOne(id);
 	if (existing == null) {
 		throw new ReviewNotFoundException("Review with id:" + id + " not found");
@@ -50,7 +50,7 @@ public class UserReviewServiceImpl implements UserReviewService {
 
 	@Override
 	@Transactional
-	public void delete(UserReview id) {
+	public void delete(String id) {
 		UserReview existing = repository.findOne(id);
 		if (existing == null) {
 			throw new ReviewNotFoundException("Review with id:" + id + " not found");

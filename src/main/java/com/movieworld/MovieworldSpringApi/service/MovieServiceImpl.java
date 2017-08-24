@@ -80,7 +80,7 @@ public class MovieServiceImpl implements MovieService {
 
 	@Override
 	@Transactional
-	public Movie update(Movie title) {
+	public Movie update(String id, Movie title) {
 		Movie existing = repository.findByTitle(title.getTitle());
 		if (existing == null) {
 			throw new MovieNotFoundException("Movie with " + title.getTitle() + "notfound");
